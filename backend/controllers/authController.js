@@ -102,7 +102,7 @@ const register = async (req, res) => {
 // LOGIN - ADMIN AND STUDENT
 const login = async (req, res) => {
   try {
-    console.log("Received request body:", req.body);
+    
     const { email, password } = req.body;
 
     if (
