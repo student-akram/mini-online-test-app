@@ -14,12 +14,13 @@ const Attempt = require("./models/Attempt");
 
 // Import routes
 const healthRoutes = require("./routes/healthRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
 // Middleware
 app.use(express.json());
-
+app.use("/api/auth", authRoutes);
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
