@@ -1,0 +1,163 @@
+
+.recent-attempts-card {
+  padding: 25px;
+  border: 1px solid #e9edf5;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.recent-attempts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 23px;
+}
+
+.recent-attempts-header h3 {
+  color: #171b3b;
+  font-size: 16px;
+}
+
+.recent-attempts-header p {
+  margin-top: 5px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.view-history-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 7px;
+  background: #f1f0ff;
+  color: #5145df;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.attempts-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.attempt-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 0;
+  border-top: 1px solid #f0f2f7;
+}
+
+.attempt-subject-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #eeedff;
+  color: #5145df;
+}
+
+.attempt-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.attempt-main strong,
+.attempt-main span {
+  display: flex;
+  align-items: center;
+}
+
+.attempt-main strong {
+  color: #334155;
+  font-size: 12px;
+}
+
+.attempt-main span {
+  gap: 5px;
+  margin-top: 6px;
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.attempt-score {
+  text-align: right;
+}
+
+.attempt-score strong {
+  display: block;
+  color: #171b3b;
+  font-size: 13px;
+}
+
+.attempt-score span {
+  display: block;
+  margin-top: 4px;
+  color: #159866;
+  font-size: 10px;
+}
+
+.attempt-view-button {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 7px;
+  background: #f8fafc;
+  color: #64748b;
+}
+
+.attempt-view-button:hover {
+  background: #eeedff;
+  color: #5145df;
+}
+
+.attempts-message {
+  padding: 30px 10px;
+  color: #94a3b8;
+  font-size: 12px;
+  text-align: center;
+}
+
+.attempts-error {
+  color: #dc2626;
+}
+
+.attempts-empty {
+  padding: 35px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.attempts-empty strong {
+  color: #334155;
+  font-size: 13px;
+}
+
+.attempts-empty p {
+  font-size: 11px;
+}
+
+@media (max-width: 480px) {
+  .recent-attempts-card {
+    padding: 18px 14px;
+  }
+
+  .attempt-row {
+    gap: 9px;
+  }
+
+  .attempt-main strong {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,143 @@
+
+.available-test-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 34px 38px;
+  border-radius: 16px;
+  background: linear-gradient(115deg, #27265f, #5145df);
+  color: #ffffff;
+}
+
+.available-test-content {
+  position: relative;
+  z-index: 2;
+  max-width: 570px;
+}
+
+.available-test-label {
+  color: #c7c5ff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.available-test-content h2 {
+  margin-top: 13px;
+  font-size: 27px;
+  letter-spacing: -0.6px;
+}
+
+.available-test-content > p {
+  max-width: 500px;
+  margin-top: 10px;
+  color: #d5d4ff;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.test-information {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 21px;
+  margin-top: 20px;
+}
+
+.test-information span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #eeeeff;
+  font-size: 11px;
+}
+
+.start-test-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 23px;
+  padding: 12px 19px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4338ca;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.start-test-button:hover {
+  transform: translateY(-2px);
+}
+
+.start-test-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.available-test-error {
+  margin-top: 12px;
+  color: #fee2e2;
+  font-size: 12px;
+}
+
+.available-test-decoration {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.test-decoration-circle {
+  width: 145px;
+  height: 145px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+
+.decoration-dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #b9b4ff;
+}
+
+.dot-one {
+  top: 8px;
+  right: 30px;
+}
+
+.dot-two {
+  bottom: 20px;
+  left: 2px;
+  width: 9px;
+  height: 9px;
+}
+
+@media (max-width: 650px) {
+  .available-test-card {
+    padding: 26px 22px;
+  }
+
+  .available-test-decoration {
+    display: none;
+  }
+
+  .available-test-content h2 {
+    font-size: 23px;
+  }
+
+  .test-information {
+    gap: 12px;
+  }
+}

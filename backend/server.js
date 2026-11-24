@@ -7,33 +7,73 @@ const mongoose = require("mongoose");
 
 const connectDB = require("./config/db");
 
-// Import all Mongoose models
+// Models
 const User = require("./models/User");
 const Question = require("./models/Question");
 const Attempt = require("./models/Attempt");
 
-// Import routes
+// Routes
 const healthRoutes = require("./routes/healthRoutes");
 const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const examRoutes = require("./routes/examRoutes");
+const answerRoutes = require("./routes/answerRoutes");
+const submissionRoutes = require("./routes/submissionRoutes");
+const historyRoutes = require("./routes/historyRoutes");
+
+// Scheduler
+const startAutoSubmitScheduler =
+  require("./utils/autoSubmitScheduler");
 
 const app = express();
 
-// Middleware
-app.use(express.json());
-app.use("/api/auth", authRoutes);
-app.use("/api/admin", adminRoutes);
+// ==================================
+// 1. CORS MIDDLEWARE - MUST BE FIRST
+// ==================================
+
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  "http://localhost:5173",
+  "http://localhost:5174"
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
   })
 );
 
-// API Routes
-app.use("/api/health", healthRoutes);
+// ==================================
+// 2. BODY PARSER
+// ==================================
 
-// Initialize MongoDB collections
+app.use(express.json());
+
+// ==================================
+// 3. API ROUTES
+// ==================================
+
+app.use("/api/health", healthRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/exam", examRoutes);
+app.use("/api/answers", answerRoutes);
+app.use("/api/submissions", submissionRoutes);
+app.use("/api/history", historyRoutes);
+
+// ==================================
+// 4. INITIALIZE MONGODB COLLECTIONS
+// ==================================
+
 const initializeCollections = async () => {
   const models = [User, Question, Attempt];
 
@@ -58,26 +98,28 @@ const initializeCollections = async () => {
     }
   }
 
-  // Initialize model indexes
   await Promise.all(models.map((model) => model.init()));
 
   console.log("All models initialized successfully");
 };
 
-// Start server
+// ==================================
+// 5. START SERVER
+// ==================================
+
 const startServer = async () => {
   try {
-    // 1. Connect to MongoDB
     await connectDB();
 
-    // 2. Initialize all collections
     await initializeCollections();
 
-    // 3. Start Express server
+    startAutoSubmitScheduler();
+
     const PORT = process.env.PORT || 5000;
 
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
+      console.log("Allowed frontend origins:", allowedOrigins);
     });
 
   } catch (error) {

@@ -1,0 +1,152 @@
+
+.student-sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 18px;
+  background: #171b3b;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 7px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-brand-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #5145df;
+}
+
+.sidebar-brand-text h2 {
+  font-size: 21px;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-brand-text span {
+  display: block;
+  margin-top: 4px;
+  color: #a5acd0;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+.sidebar-section-label {
+  margin: 32px 10px 13px;
+  color: #8991b7;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sidebar-link {
+  min-height: 47px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0 13px;
+  border-radius: 9px;
+  color: #b8bfd9;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: rgba(255,255,255,0.07);
+  color: white;
+}
+
+.sidebar-link.active {
+  color: white;
+  background: #4f46e5;
+  box-shadow: 0 5px 15px rgba(79,70,229,0.25);
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.sidebar-help-card {
+  padding: 17px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+}
+
+.help-icon {
+  margin-bottom: 12px;
+  color: #a5b4fc;
+}
+
+.sidebar-help-card strong {
+  font-size: 13px;
+}
+
+.sidebar-help-card p {
+  margin-top: 7px;
+  color: #a5acd0;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.sidebar-version {
+  padding: 22px 5px 0;
+  color: #8991b7;
+  font-size: 10px;
+  text-align: center;
+}
+
+.sidebar-close {
+  display: none;
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: white;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .student-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .student-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: rgba(15,23,42,0.5);
+  }
+
+  .sidebar-close {
+    display: grid;
+    place-items: center;
+  }
+}
+

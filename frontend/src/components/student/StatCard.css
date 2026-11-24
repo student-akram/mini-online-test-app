@@ -1,0 +1,79 @@
+
+.student-stat-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  padding: 23px 20px;
+  border: 1px solid #e9edf5;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(15,23,42,0.025);
+}
+
+.stat-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+}
+
+.stat-blue {
+  background: #e9efff;
+  color: #4361dc;
+}
+
+.stat-green {
+  background: #e3f8ef;
+  color: #159866;
+}
+
+.stat-purple {
+  background: #f0eaff;
+  color: #8252cf;
+}
+
+.stat-orange {
+  background: #fff1df;
+  color: #e28a24;
+}
+
+.stat-details {
+  min-width: 0;
+}
+
+.stat-details p {
+  color: #78839a;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.stat-details h3 {
+  margin: 9px 0 5px;
+  color: #171b3b;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.stat-details span {
+  color: #a0a8b9;
+  font-size: 10px;
+}
+
+@media (max-width: 480px) {
+  .student-stat-card {
+    padding: 17px 14px;
+    gap: 11px;
+  }
+
+  .stat-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .stat-details h3 {
+    font-size: 23px;
+  }
+}
