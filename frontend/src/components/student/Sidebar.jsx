@@ -19,16 +19,8 @@ const Sidebar = ({ isOpen, onClose }) => {
       icon: LayoutDashboard,
       end: true
     },
-    {
-      label: "Take Test",
-      path: "/student/test",
-      icon: ClipboardList
-    },
-    {
-      label: "My Results",
-      path: "/student/results",
-      icon: Award
-    },
+    
+    
     {
       label: "Exam History",
       path: "/student/history",
@@ -75,6 +67,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                 }
               >
                 <Icon size={19} />
+                
                 <span>{item.label}</span>
               </NavLink>
             );

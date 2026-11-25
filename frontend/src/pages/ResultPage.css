@@ -1,0 +1,273 @@
+
+.result-page {
+  min-height: 100vh;
+  padding: 35px 18px 55px;
+  background: #f6f7fb;
+}
+
+.result-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.result-back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 9px 13px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 12px;
+}
+
+.result-summary-card {
+  padding: 34px;
+  border: 1px solid #e8ebf2;
+  border-radius: 17px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.result-trophy-icon {
+  width: 67px;
+  height: 67px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  border-radius: 20px;
+  background: #fff4df;
+  color: #d28a21;
+}
+
+.result-eyebrow {
+  color: #5145df;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.result-summary-card h1 {
+  margin-top: 12px;
+  color: #171b3b;
+  font-size: 27px;
+}
+
+.result-summary-card > p {
+  margin-top: 8px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.result-score {
+  margin-top: 24px;
+  color: #171b3b;
+}
+
+.result-score strong {
+  font-size: 55px;
+}
+
+.result-score span {
+  color: #94a3b8;
+  font-size: 20px;
+}
+
+.result-percentage {
+  margin-top: 5px;
+  color: #5145df;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.result-progress-track {
+  max-width: 400px;
+  height: 8px;
+  margin: 21px auto 14px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #eef0f6;
+}
+
+.result-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #5145df;
+}
+
+.result-submission-type {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.result-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.result-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 12px;
+  border: 1px solid #e8ebf2;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.result-stat span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.result-stat strong {
+  color: #171b3b;
+  font-size: 24px;
+}
+
+.result-correct svg,
+.review-correct {
+  color: #159866;
+}
+
+.result-incorrect svg,
+.review-incorrect {
+  color: #dc2626;
+}
+
+.result-unanswered svg,
+.review-unanswered {
+  color: #d97706;
+}
+
+.result-review-card {
+  padding: 26px;
+  border: 1px solid #e8ebf2;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.result-review-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.result-review-heading h2 {
+  color: #171b3b;
+  font-size: 17px;
+}
+
+.result-review-heading span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.result-question {
+  padding: 22px 0;
+  border-top: 1px solid #eef0f5;
+}
+
+.result-question-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10px;
+}
+
+.result-question-heading > span {
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.result-question h3 {
+  margin-top: 12px;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.result-answer-details {
+  margin-top: 13px;
+  padding: 13px;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.result-answer-details p {
+  color: #64748b;
+  font-size: 11px;
+  line-height: 2;
+}
+
+.result-answer-details strong {
+  color: #334155;
+}
+
+.result-dashboard-button,
+.result-error button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 9px;
+  background: #5145df;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.result-loading,
+.result-error {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  color: #64748b;
+  text-align: center;
+}
+
+.result-error h2 {
+  color: #171b3b;
+}
+
+.result-error p {
+  font-size: 13px;
+}
+
+.result-error button {
+  max-width: 220px;
+}
+
+@media (max-width: 600px) {
+  .result-summary-card {
+    padding: 26px 16px;
+  }
+
+  .result-summary-card h1 {
+    font-size: 23px;
+  }
+
+  .result-stat-grid {
+    gap: 8px;
+  }
+
+  .result-stat {
+    padding: 17px 8px;
+  }
+
+  .result-review-card {
+    padding: 18px 14px;
+  }
+}

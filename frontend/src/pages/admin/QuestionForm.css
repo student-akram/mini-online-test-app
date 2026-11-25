@@ -1,0 +1,219 @@
+
+.question-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.58);
+  overflow-y: auto;
+}
+
+.question-modal {
+  width: 100%;
+  max-width: 720px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.question-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 26px;
+  border-bottom: 1px solid #e8ebf2;
+}
+
+.question-modal-header h2 {
+  margin: 0;
+  color: #17213b;
+  font-size: 21px;
+}
+
+.question-modal-header p {
+  margin: 7px 0 0;
+  color: #8993a7;
+  font-size: 13px;
+}
+
+.question-modal-close {
+  border: 0;
+  background: #f1f3f8;
+  color: #536078;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.question-form {
+  padding: 24px 26px;
+}
+
+.question-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  margin-bottom: 19px;
+}
+
+.question-form-group label,
+.question-options-heading label {
+  color: #27344f;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.question-form-group input,
+.question-form-group textarea,
+.question-form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 13px;
+  border: 1px solid #dfe4ed;
+  border-radius: 8px;
+  outline: none;
+  color: #26334d;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+}
+
+.question-form-group textarea {
+  resize: vertical;
+  min-height: 85px;
+}
+
+.question-form-group input:focus,
+.question-form-group textarea:focus,
+.question-form-group select:focus {
+  border-color: #5146e5;
+  box-shadow: 0 0 0 3px rgba(81, 70, 229, 0.09);
+}
+
+.question-options-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.question-options-heading span {
+  color: #929bad;
+  font-size: 11px;
+}
+
+.question-options-grid,
+.question-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.question-option-input {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.question-option-input > span {
+  width: 30px;
+  height: 38px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  color: #5146e5;
+  background: #efedff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.question-option-input input {
+  min-width: 0;
+}
+
+.question-form-error {
+  padding: 11px 13px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #c13b3b;
+  font-size: 13px;
+}
+
+.question-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 11px;
+  padding-top: 17px;
+  border-top: 1px solid #e8ebf2;
+}
+
+.question-form-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 17px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.question-cancel-button {
+  border: 1px solid #dfe4ed;
+  background: white;
+  color: #59647a;
+}
+
+.question-save-button {
+  border: 0;
+  background: #5146e5;
+  color: white;
+}
+
+.question-save-button:hover {
+  background: #4035cb;
+}
+
+.question-form-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .question-modal-overlay {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .question-modal-header,
+  .question-form {
+    padding: 19px;
+  }
+
+  .question-options-grid,
+  .question-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .question-options-heading {
+    flex-direction: column;
+  }
+
+  .question-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .question-form-actions button {
+    width: 100%;
+  }
+}
