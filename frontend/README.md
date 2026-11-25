@@ -221,8 +221,10 @@ Production URLs will be added after successful deployment.
 
 | Service | URL |
 |---|---|
-| Live Application | Coming soon |
-| Backend API | Coming soon |
+| Live Application | https://mini-online-test-app-eta.vercel.app |
+| Backend API | 
+VITE_API_URL=https://mini-online-test-app.onrender.com/api
+ |
 | GitHub Repository | https://github.com/student-akram/mini-online-test-app/ |
 
 ## 🔒 Security Considerations
